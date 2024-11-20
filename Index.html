@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>	
+
+<script type="text/javascript">
+
+//La idea de este ejercicio es presentarme, utilizando un objeto y encontrar los productos que preciso para hacer mis compras, con la ayuda del público. O también encontrar a todos los ídolos de Boca.
+
+
+const yo = {
+
+nombre: "Santiago",
+apellido: "Ceruso",
+edad: 22,
+nacionalidad: "argentino",
+estudio: "programación",
+soy: "futbolero",
+aguanteLiga: ["Boca","Racing","Independiente","Velez"],
+
+introduccionMia: function() 
+{let respuesta = prompt(`Hola, mi nombre es ${this.nombre} ${this.apellido}, tengo ${this.edad} años. Soy ${this.nacionalidad} y estudio ${this.estudio}.
+Soy ${this.soy} y necesito encontrar 12 equipos de Primera División. Por el momento tengo estos 4: ${this.aguanteLiga}.Podrías ayudarme a encontrar el resto? "si" o "no"`);
+
+if (respuesta.toLowerCase() === "si"){
+
+while (this.aguanteLiga.length < 12) {
+
+let nuevoEquipo = prompt("A qué equipo agregarías mostro?"); 
+
+if (nuevoEquipo === "River") {
+
+  alert("¿Tan gallina vas a ser?");  
+
+} else if  (this.aguanteLiga.includes(nuevoEquipo)){
+  
+  alert("Este equipo ya se encuentra en la lista");
+
+} else if (nuevoEquipo) {
+
+  this.aguanteLiga.push(nuevoEquipo.trim());
+
+  alert(`De una pa, ahora sería: ${this.aguanteLiga.join(" , ")}`);
+
+} else {
+
+  alert("Ingresa un equipo válido");
+}
+
+}
+
+alert(`La lista final sería: ${this.aguanteLiga.join(" \n ")}`);
+
+} else {
+
+  alert(`Ni que necesitara tu ayuda igual`);
+      }
+  },
+};
+
+yo.introduccionMia();
+
+</script>
+
+</body>
+</html>
